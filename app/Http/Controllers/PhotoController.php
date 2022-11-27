@@ -34,7 +34,7 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "'store'";
     }
 
     /**
@@ -68,7 +68,7 @@ class PhotoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return "'update'";
     }
 
     /**
@@ -79,6 +79,6 @@ class PhotoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "'destroy'";
     }
 }
