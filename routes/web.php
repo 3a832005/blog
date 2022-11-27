@@ -14,9 +14,17 @@ use App\Http\Controllers\PhotoController;
 */
 
 //Route::resource('photos', PhotoController::class);
-Route::resource('photos', PhotoController::class)->only([
-    'index', 'show', 'store', 'update'
-]);
+
+//Route::resource('photos', PhotoController::class)->only([
+//    'index', 'show', 'store', 'update', 'destroy'
+//]);
+
+Route::get('photos', [PhotoController::class, 'index'])->name("photos.index");
+Route::get('photos/{photo}', [PhotoController::class, 'show'])->name("photos.show");
+Route::post('photos', [PhotoController::class, 'store'])->name("photos.store");
+Route::patch('photos/{photo}', [PhotoController::class, 'update'])->name("photos.update");
+Route::delete('photos/{photo}', [PhotoController::class, 'destroy'])->name("photos.destroy");
+
 //Route::get('/', function () {
 //    return view('welcome');
 //});
