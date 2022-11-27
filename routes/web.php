@@ -13,8 +13,10 @@ use App\Http\Controllers\PhotoController;
 |
 */
 
-Route::resource('photos', PhotoController::class);
-
+//Route::resource('photos', PhotoController::class);
+Route::resource('photos', PhotoController::class)->only([
+    'index', 'show', 'store', 'update'
+]);
 //Route::get('/', function () {
 //    return view('welcome');
 //});
